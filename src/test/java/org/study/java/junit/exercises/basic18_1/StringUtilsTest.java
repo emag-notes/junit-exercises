@@ -8,7 +8,7 @@ import org.junit.Test;
 public class StringUtilsTest {
 
     @Test
-    public void toSnakeCas_aaaはaaaを返す() throws Exception {
+    public void toSnakeCase_aaaはaaaを返す() throws Exception {
         // SetUp
         StringUtils sut = new StringUtils();
         // Exercise
