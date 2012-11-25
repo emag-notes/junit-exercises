@@ -6,14 +6,18 @@ import java.util.regex.Pattern;
 public class StringUtils {
 
     /**
+     * <p>
      * 引数の文字列をスネークケース(すべて小文字で単語区切りがアンダースコア)に変換した文字列を返す
+     * </p>
+     * (e.g.)
+     * <ul>
+     * <li>aaa -> aaa</li>
+     * <li>HelloWorld -> hello_world</li>
+     * <li>practiceJunit -> practice_junit</li>
+     * </ul>
      * @param src 元の文字列
      * @return スネークケースに変換した文字列
      * 
-     * (e.g.)
-     * aaa -> aaa
-     * HelloWorld -> hello_world
-     * practiceJunit -> practice_junit
      */
     public static String toSnakeCase(String src) {
         StringBuilder toSnakeCasedStr = new StringBuilder(src);
