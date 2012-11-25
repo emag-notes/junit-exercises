@@ -4,7 +4,7 @@ public class StringUtils {
 
     public String toSnakeCase(String string) {
         // TODO Auto-generated method stub
-        return null;a
+        return null;
     }
 
 }
