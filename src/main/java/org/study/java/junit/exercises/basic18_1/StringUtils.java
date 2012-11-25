@@ -16,7 +16,7 @@ public class StringUtils {
      * practiceJunit -> practice_junit
      */
     public static String toSnakeCase(String src) {
-        StringBuilder ret = new StringBuilder(src);
+        StringBuilder toSnakeCasedStr = new StringBuilder(src);
         
         Pattern p = Pattern.compile("[A-Z]");
         Matcher m = p.matcher(src);
@@ -27,10 +27,10 @@ public class StringUtils {
             // 最初の文字の前には_を挿入しない
             if (upperCaseIdx <= 0) continue;
             
-            ret.insert(upperCaseIdx, "_");
+            toSnakeCasedStr.insert(upperCaseIdx, "_");
         }
         
-        return ret.toString().toLowerCase();
+        return toSnakeCasedStr.toString().toLowerCase();
     }
 
 }
