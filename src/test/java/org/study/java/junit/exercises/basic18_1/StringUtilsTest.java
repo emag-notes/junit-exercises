@@ -14,4 +14,12 @@ public class StringUtilsTest {
         // Verify
         assertThat(StringUtils.toSnakeCase("aaa"), is("aaa"));
     }
+    
+    @Test
+    public void toSnakeCase_HelloWorldはhello_worldを返す() throws Exception {
+        // SetUp
+        // Exercise
+        // Verify
+        assertThat(StringUtils.toSnakeCase("HelloWorld"), is("hello_world"));
+    }
 }
