@@ -10,9 +10,8 @@ public class StringUtilsTest {
     @Test
     public void toSnakeCase_aaaはaaaを返す() throws Exception {
         // SetUp
-        StringUtils sut = new StringUtils();
         // Exercise
         // Verify
-        assertThat(sut.toSnakeCase("aaa"), is("aaa"));
+        assertThat(StringUtils.toSnakeCase("aaa"), is("aaa"));
     }
 }
