@@ -21,4 +21,9 @@ public class StringUtilsTest {
     public void toSnakeCase_practiceJunitはpractice_junitを返す() throws Exception {
         assertThat(StringUtils.toSnakeCase("practiceJunit"), is("practice_junit"));
     }
+    
+    @Test
+    public void toSnakeCase_nullはnullを返す() throws Exception {
+        assertThat(StringUtils.toSnakeCase(null), is(nullValue()));
+    }
 }
