@@ -16,4 +16,9 @@ public class CalculatorTest {
     public void divide_3_2は1を返す() throws Exception {
         assertThat(Calculator.divide(3, 2), is(1));
     }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void divide_5_0はIllegalArugumentExceptionを送出する() throws Exception {
+        Calculator.divide(5, 0);
+    }
 }
