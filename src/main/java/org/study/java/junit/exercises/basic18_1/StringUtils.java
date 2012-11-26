@@ -7,7 +7,8 @@ public class StringUtils {
 
     /**
      * <p>
-     * 引数の文字列をスネークケース(すべて小文字で単語区切りがアンダースコア)に変換した文字列を返す
+     * 引数の文字列をスネークケース(すべて小文字で単語区切りがアンダースコア)に変換した文字列を返す。
+     * null が与えられたときは null を返す。
      * </p>
      * (e.g.)
      * <ul>
@@ -20,6 +21,8 @@ public class StringUtils {
      * 
      */
     public static String toSnakeCase(String src) {
+        if (src == null) return null;
+        
         StringBuilder toSnakeCasedStr = new StringBuilder(src);
         
         Pattern p = Pattern.compile("[A-Z]");
