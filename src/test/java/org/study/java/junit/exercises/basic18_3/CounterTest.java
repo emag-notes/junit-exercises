@@ -3,6 +3,7 @@ package org.study.java.junit.exercises.basic18_3;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -18,6 +19,23 @@ public class CounterTest {
             // Exercise
             // Verify
             assertThat(sut.increment(), is(1));
+        }
+    }
+    
+    public static class incrementを1回実行した状態 {
+        Counter sut;
+        
+        @Before
+        public void setUp() throws Exception {
+            sut = new Counter();
+            sut.increment();
+        }
+        
+        @Test
+        public void incrementを実行すると2を返す() throws Exception {
+            // Exercise
+            // Verify
+            assertThat(sut.increment(), is(2));
         }
     }
 }
