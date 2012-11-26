@@ -38,4 +38,23 @@ public class CounterTest {
             assertThat(sut.increment(), is(2));
         }
     }
+    
+    public static class incrementを50回実行した状態 {
+        Counter sut;
+        
+        @Before
+        public void setUp() throws Exception {
+            sut = new Counter();
+            for (int i = 0; i < 50; i++) {
+                sut.increment();
+            }
+        }
+        
+        @Test
+        public void incrementを実行すると51を返す() throws Exception {
+            // Exercise
+            // Verify
+            assertThat(sut.increment(), is(51));
+        }
+    }
 }
