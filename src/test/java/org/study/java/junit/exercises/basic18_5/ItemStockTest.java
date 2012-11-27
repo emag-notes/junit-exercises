@@ -52,6 +52,13 @@ public class ItemStockTest {
         }
         
         @Test
+        public void getNum_itemAは0を返す() throws Exception {
+            // Exercise
+            // Verify
+            assertThat(sut.getNum(itemA), is(1));
+        }
+        
+        @Test
         public void add_itemAの実行後はgetNum_itemAは2を返す() throws Exception {
             // Exercise
             sut.add(itemA);
