@@ -69,5 +69,14 @@ public class ItemStockTest {
             assertThat(sut.getNum(itemB), is(1));
         }
         
+        @Test
+        public void nameがAでpriceが200であるitemA200をaddした後はget_itemAは2を返す() throws Exception {
+            // SetUp
+            Item itemA200 = new Item("A", 200);
+            // Exercise
+            sut.add(itemA200);
+            // Verify
+            assertThat(sut.getNum(itemA), is(2));
+        }
     }
 }
