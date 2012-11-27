@@ -4,11 +4,11 @@ public class NumberUtils {
 
     /**
      * 引数が2で割りきれる場合にtrueを返す
-     * @param x int型整数
+     * @param num int型整数
      * @return 引数が2で割りきれるかどうかの真偽値
      */
-    public static boolean isEven(int x) {
-        return x % 2 == 0;
+    public static boolean isEven(int num) {
+        return num % 2 == 0;
     }
 
 }
