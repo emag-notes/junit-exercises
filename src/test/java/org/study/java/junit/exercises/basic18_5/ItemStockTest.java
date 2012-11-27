@@ -12,6 +12,7 @@ import org.junit.runner.RunWith;
 public class ItemStockTest {
 
     public static class 初期状態 {
+        
         ItemStock sut;
         Item item;
         
@@ -39,6 +40,34 @@ public class ItemStockTest {
     }
     
     public static class Itemが1つ追加された状態 {
+        
+        ItemStock sut;
+        Item itemA;
+        
+        @Before
+        public void setUp() throws Exception {
+            sut = new ItemStock();
+            itemA = new Item("A", 100);
+            sut.add(itemA);
+        }
+        
+        @Test
+        public void add_itemAの実行後はgetNum_itemAは2を返す() throws Exception {
+            // Exercise
+            sut.add(itemA);
+            // Verify
+            assertThat(sut.getNum(itemA), is(2));
+        }
+        
+        @Test
+        public void add_itemBの実行後はgetNum_itemBは1を返す() throws Exception {
+            // SetUp
+            Item itemB = new Item("B", 200);
+            // Exercise
+            sut.add(itemB);
+            // Verify
+            assertThat(sut.getNum(itemB), is(1));
+        }
         
     }
 }
