@@ -2,6 +2,7 @@ package org.study.java.junit.exercises.assertionfixture19_1;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+import static org.study.java.junit.exercises.assertionfixture19_1.Lists.*;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ import org.junit.Test;
 public class FizzBuzzTest {
 
     @Test
-    public void createFizzBuzzListで16まで取得できる() throws Exception {
+    public void createFizzBuzzListで16まで取得できる_基本() throws Exception {
         List<String> actual = FizzBuzz.createFizzBuzzList(16);
         assertThat(actual, is(notNullValue()));
         assertThat(actual.size(),  is(16));
@@ -29,5 +30,11 @@ public class FizzBuzzTest {
         assertThat(actual.get(13), is("14"));
         assertThat(actual.get(14), is("FizzBuzz"));
         assertThat(actual.get(15), is("16"));
+    }
+    
+    @Test
+    public void createFizzBuzzListで16まで取得できる_カスタムMatcher利用() throws Exception {
+        List<String> actual = FizzBuzz.createFizzBuzzList(6);
+        assertThat(actual, is(list("1", "2", "Fizz", "4", "Buzz", "Fizz")));
     }
 }
