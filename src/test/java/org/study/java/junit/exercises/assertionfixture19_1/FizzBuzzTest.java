@@ -2,9 +2,7 @@ package org.study.java.junit.exercises.assertionfixture19_1;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
-import static org.study.java.junit.exercises.assertionfixture19_1.IsList.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
