@@ -1,6 +1,9 @@
 package org.study.java.junit.exercises.assertionfixture19_2;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,11 +21,29 @@ public class Employee {
     
     public static List<Employee> load(InputStream input) {
         List<Employee> employees = new ArrayList<Employee>();
+        BufferedReader reader = null;
         
-        Employee employee = new Employee("Ichiro", "Tanaka", "ichiro@example.com");
-        employees.add(employee);
+        try {
+            
+            reader = new BufferedReader(new InputStreamReader(input));
+            while (true) {
+                String line = reader.readLine();
+                if (line == null) break;
+                String[] values = line.split(",");
+                Employee employee = new Employee(values[0], values[1], values[2]);
+                employees.add(employee);
+            }
+            return employees;
+            
+        } catch (IOException e) {
+          throw new RuntimeException(e);  
+        } finally {
+            if (reader != null) {
+                try { reader.close(); }
+                catch (IOException e) { /* do nothing */ }
+            }
+        }
         
-        return employees;
     }
     
     public String getFirstName() {
