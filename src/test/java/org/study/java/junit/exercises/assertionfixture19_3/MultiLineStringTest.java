@@ -10,8 +10,10 @@ public class MultiLineStringTest {
     @Test
     public void joinで文字列が連結される() throws Exception {
         // SetUp
+        String ls = System.getProperty("line.separator");
+        String expected = "Hello" + ls + "World";
         // Exercise
         // Verify
-        assertThat(MultiLineString.join("Hello", "World"), is("Hello\nWorld"));
+        assertThat(MultiLineString.join("Hello", "World"), is(expected));
     }
 }
