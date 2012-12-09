@@ -12,7 +12,7 @@ public class MultiLineStringTest {
     public void joinで文字列が連結される() throws Exception {
         // SetUp
         String ls = System.getProperty("line.separator");
-        String expected = "Hello" + ls + "World";
+        String expected = "Hello" + ls + "World" + ls;
         // Exercise
         // Verify
         assertThat(MultiLineString.join("Hello", "World"), is(text(expected)));
