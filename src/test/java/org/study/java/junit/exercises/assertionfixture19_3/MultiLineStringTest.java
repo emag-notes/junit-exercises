@@ -2,6 +2,7 @@ package org.study.java.junit.exercises.assertionfixture19_3;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+import static org.study.java.junit.exercises.assertionfixture19_3.MultiLineStringMatcher.*;
 
 import org.junit.Test;
 
@@ -14,6 +15,6 @@ public class MultiLineStringTest {
         String expected = "Hello" + ls + "World";
         // Exercise
         // Verify
-        assertThat(MultiLineString.join("Hello", "World"), is(expected));
+        assertThat(MultiLineString.join("Hello", "World"), is(text(expected)));
     }
 }
