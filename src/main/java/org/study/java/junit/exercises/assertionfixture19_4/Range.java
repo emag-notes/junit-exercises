@@ -9,5 +9,9 @@ public class Range {
         min_ = min;
         max_ = max;
     }
+
+    public boolean contains(double d) {
+        return false;
+    }
     
 }
