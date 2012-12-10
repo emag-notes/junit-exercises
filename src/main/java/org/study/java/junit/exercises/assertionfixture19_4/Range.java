@@ -10,8 +10,8 @@ public class Range {
         max_ = max;
     }
 
-    public boolean contains(double d) {
-        return false;
+    public boolean contains(double value) {
+        return min_ <= value && value <= max_;
     }
     
 }
