@@ -13,11 +13,12 @@ public class ConsumptionTaxTest {
 
     @DataPoints
     public static Fixture[] FIXTURES = new Fixture[] {
-        new Fixture( 5,  100,  105),
-        new Fixture( 5, 3000, 3150),
-        new Fixture(10,   50,   55),
-        new Fixture( 5,   50,   52),
-        new Fixture( 3,   50,   51),
+      //new Fixture(税率, 入力値(価格), 期待値)
+        new Fixture(  5,        100,  105),
+        new Fixture(  5,       3000, 3150),
+        new Fixture( 10,         50,   55),
+        new Fixture(  5,         50,   52),
+        new Fixture(  3,         50,   51),
     };
     
     @Theory
