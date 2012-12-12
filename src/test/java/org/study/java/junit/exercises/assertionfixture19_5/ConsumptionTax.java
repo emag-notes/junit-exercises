@@ -2,12 +2,14 @@ package org.study.java.junit.exercises.assertionfixture19_5;
 
 public class ConsumptionTax {
 
+    private final int taxRate_;
+    
     public ConsumptionTax(int taxRate) {
-        // TODO Auto-generated constructor stub
+        taxRate_ = taxRate;
     }
 
-    public Integer apply(int price) {
-        return 105;
+    public int apply(int price) {
+        return price + (price * taxRate_ / 100);
     }
 
 }
