@@ -4,12 +4,19 @@ import java.util.Calendar;
 
 public class MonthlyCalendar {
 
-    public MonthlyCalendar(Calendar newCalendar) {
-        // TODO Auto-generated constructor stub
+    private final Calendar cal_;
+    
+    public MonthlyCalendar() {
+        this(Calendar.getInstance());
+    }
+    
+    public MonthlyCalendar(Calendar cal) {
+        // Calendar#clone はオーバーライドされている
+        cal_ = (Calendar) cal.clone();
     }
 
     public int getRemainingDays() {
-        return 0;
+        return cal_.getActualMaximum(Calendar.DATE) - cal_.get(Calendar.DATE);
     }
 
 }
