@@ -10,7 +10,8 @@ public class MonthlyCalendar {
         this(Calendar.getInstance());
     }
     
-    public MonthlyCalendar(Calendar cal) {
+    // このコンストラクタは UT 要のためパッケージプライベート
+    MonthlyCalendar(Calendar cal) {
         // Calendar#clone はオーバーライドされている
         cal_ = (Calendar) cal.clone();
     }
