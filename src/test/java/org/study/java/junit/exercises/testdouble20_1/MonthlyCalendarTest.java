@@ -23,10 +23,7 @@ public class MonthlyCalendarTest {
     
     @Test
     public void 現在時刻が20120201の場合getRemainingDaysは28を返す() throws Exception {
-        Calendar newCal = newCalendar(2012, 2, 1);
-        MonthlyCalendar sut = new MonthlyCalendar(newCal);
-        // MonthlyCalendar が不変クラスであることを確認する
-        newCal.set(Calendar.DATE, 2);
+        MonthlyCalendar sut = new MonthlyCalendar(newCalendar(2012, 2, 1));
         assertThat(sut.getRemainingDays(), is(28));
     }
     

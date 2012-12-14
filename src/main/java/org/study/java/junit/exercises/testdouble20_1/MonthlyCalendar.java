@@ -12,8 +12,7 @@ public class MonthlyCalendar {
     
     // このコンストラクタは UT 要のためパッケージプライベート
     MonthlyCalendar(Calendar cal) {
-        // Calendar#clone はオーバーライドされている
-        cal_ = (Calendar) cal.clone();
+        cal_ = cal;
     }
 
     public int getRemainingDays() {
